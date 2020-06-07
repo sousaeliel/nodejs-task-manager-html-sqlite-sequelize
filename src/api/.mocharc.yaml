@@ -1,0 +1,21 @@
+allow-uncaught: false
+async-only: false
+bail: false
+check-leaks: false
+color: true
+delay: false
+diff: true
+exit: true # could be expressed as "no-exit: true"
+extension:
+  - 'js'
+reporter: 'spec'
+require:
+  - 'babel-register'
+  - 'test/helpers'
+retries: 1
+slow: 5000
+spec:
+  - 'test/**/*.js'
+  # - 'test/**/*.spec.js'
+watch-files:
+  - 'test/**/*.js'
