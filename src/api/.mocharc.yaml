@@ -11,11 +11,11 @@ extension:
 reporter: 'spec'
 require:
   - 'babel-register'
-  - 'test/helpers'
+  - 'tests/helpers'
 retries: 1
 slow: 5000
 spec:
-  - 'test/**/*.js'
-  # - 'test/**/*.spec.js'
+  - 'tests/**/*.js'
+  # - 'tests/**/*.spec.js'
 watch-files:
-  - 'test/**/*.js'
+  - 'tests/**/*.js'
