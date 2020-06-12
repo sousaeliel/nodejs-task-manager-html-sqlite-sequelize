@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Cliente web de gestão de tarefas que consome a [NTask API](https://github.com/caio-ribeiro-pereira/ntask-api)   Este é um projeto para fins educativos sobre como construir um cliente web usando JavaScript ES6.",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^6.3.0",
+    "browser-request": "^0.3.3",
+    "browserify": "^11.2.0",
+    "http-server": "^0.8.4",
+    "tiny-emitter": "^1.0.0",
+    "uglify": "^0.1.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  },
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "server": "http-server public -p 3001",
+    "build": "npm run browserify",
+    "browserify": "browserify src -t babelify -o public/js/app.js",
+    "uglify": "uglify -s public/js/app.js -o public/js/app.min.js"
+  },
+  "author": "Eliel Sousa",
+  "license": "ISC"
+}

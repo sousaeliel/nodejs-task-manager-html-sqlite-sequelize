@@ -38,9 +38,11 @@ module.exports = (sequelize, DataType) => {
         },
         classMethods: {
             associate: function (models) {
-                console.log(models.Tasks);
                 Users.hasMany(models.Tasks, { 
-                    foreignKey: 'user_id' 
+                    foreignKey: 'user_id',
+                    onDelete: 'cascade',
+                    constraints: true,
+                    hooks: true
                 });
             },
             isPassword: (encodedPassword, password) => {

@@ -20,9 +20,11 @@ module.exports = (sequelize, DataType) => {
     }, {
         classMethods: {
             associate: function (models) {
-                console.log(models.Users);
                 Tasks.belongsTo(models.Users, { 
-                    foreignKey: 'user_id' 
+                    foreignKey: 'user_id',
+                    onDelete: 'cascade',
+                    constraints: true,
+                    hooks: true
                 });
             }
         }
